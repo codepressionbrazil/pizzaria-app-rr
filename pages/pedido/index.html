@@ -5,26 +5,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RR | Pedido!</title>
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
         <div class="links">
-            <a href="../">Home</a>
-            <a href="./confirma">Carrinho de pedidos</a>
+            <a href="../../index.html">Home</a>
+            <a href="../confirma/index.html">Carrinho de pedidos</a>
         </div>
     </header>
 
     <main>
+
+        <h1>Faça seu pedido!</h1>
+
         <form id="order">
-            <label>
+            <h2>Dados pessoais</h2>
+            <label class="item">
+                Nome
+                <input required type="text" id="name">
+            </label>
+
+            <label class="item">
+                E-mail
+                <input type="email" id="email">
+            </label>
+
+            <label class="item">
+                Telefone
+                <input required type="number" id="phone">
+            </label>
+
+            <h2>Endereço</h2>                
+            <label class="item">
+                Rua
+                <input required type="text" id="street">
+            </label>
+
+            <label class="item">
+                Bairro
+                <input required type="text" id="district">
+            </label>
+
+            <label class="item">
+                N°
+                <input type="number" id="number">
+            </label>
+
+            <label class="item">
+                Descrição
+                <input required type="text" id="description">
+            </label>
+
+
+            <h2>Pizza</h2>
+            <label class="item">
                 Tamanho:
-                <select id="size">
+                <select required id="size">
+                    <option value="">Selecione um tamanho</option>
                     <option value="S">Pequena - R$ 20</option>
                     <option value="M">Média - R$ 30</option>
                     <option value="L">Grande - R$ 40</option>
                     <option value="F">Família - R$ 50</option>
                 </select>
             </label>
+
+            <!-- <label class="item">
+                Sabores
+                <select required id="flavors"></select>
+            </label> -->
+
+            <div class="item">
+                Adicionais
+                <label>
+                    Borda
+                    <input type="checkbox" id="border">
+                </label>
+            </div>
+
+            <div class="item" id="border-flavor" />
+
+            <label class="item">
+                Bebidas
+                <label>Guaraná</label>
+                <input type="checkbox" name="" id="guarana">
+            </label>
+
+            <div class="item">
+                Tipo de entrega
+                <label>
+                    Retirada no balcão
+                    <input required type="radio" name="deliver" id="delivert" value="balc">
+                </label>
+                <label>
+                    Delivery
+                    <input required type="radio" name="deliver" id="delivery" value="delivery">
+                </label>
+            </div>
+            <button id="btn-confirm" class="btn-confirm">Finalizar pedido!</button>
         </form>
     </main>
 </body>
