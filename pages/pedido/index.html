@@ -7,6 +7,7 @@
     <title>RR | Pedido!</title>
     <link rel="stylesheet" href="../../global.css">
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
 </head>
 <body>
     <header>
@@ -76,24 +77,34 @@
                 <select required id="flavors"></select>
             </label> -->
 
+            <h3>Adicionais</h3>
             <div class="item">
-                Adicionais
                 <label>
                     Borda
-                    <input type="checkbox" id="border">
+                    <select id="border-flavor">
+                        <option value="no-border">Sem borda</option>
+                        <option value="catupiry">Catupiry</option>
+                        <option value="cheddar">Cheddar</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="white-cholate">Chocolate Branco</option>
+                    </select>
                 </label>
             </div>
 
-            <div class="item" id="border-flavor" />
-
-            <label class="item">
-                Bebidas
-                <label>Guaraná</label>
-                <input type="checkbox" name="" id="guarana">
-            </label>
-
+            <h2>Bebidas</h2>
             <div class="item">
-                Tipo de entrega
+                <label>
+                    Guaraná
+                    <input type="checkbox" id="guarana">
+                </label>
+                <label>
+                    Coca-Cola
+                    <input type="checkbox" id="coca-cola">
+                </label>
+            </div>
+
+            <h3>Tipo de entrega</h3>
+            <div class="item">
                 <label>
                     Retirada no balcão
                     <input required type="radio" name="deliver" id="delivert" value="balc">

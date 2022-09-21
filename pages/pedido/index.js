@@ -18,9 +18,30 @@ function makeOrder(){
     const description = getValueFromDucument("description")
 
     const size = getValueFromDucument("size")
-    const flavors = getValueFromDucument("flavors")
-    const border = getValueFromDucument("border", true)
+
+    // const flavors = getValueFromDucument("flavors")
     const borderFlavor = getValueFromDucument("border-flavor")
 
-    const drinks = getValueFromDucument("")
+    const guarana = getValueFromDucument("guarana", true)
+    const coca = getValueFromDucument("coca-cola", true)
+
+    const order = {
+        person,
+        email,
+        phone,
+        address: {
+            street,
+            district,
+            number,
+            description
+        },
+        size,
+        borderFlavor,
+        drinks: {
+            guarana,
+            coca,
+        }
+    }
+
+    localStorage.setItem("order", JSON.stringify(order))
 }
