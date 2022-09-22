@@ -35,7 +35,7 @@
 
             <label class="item">
                 Telefone
-                <input required type="number" id="phone">
+                <input required type="number" id="phone" pattern="\(\d{2}\)\d{5}-\d{4}">
             </label>
 
             <h2>Endereço</h2>                
@@ -72,10 +72,10 @@
                 </select>
             </label>
 
-            <!-- <label class="item">
-                Sabores
-                <select required id="flavors"></select>
-            </label> -->
+            <h3 style="display: none;" id="flavors-label-title">Sabores</h3>
+            <label id="flavors" class="item">
+                
+            </label>
 
             <h3>Adicionais</h3>
             <div class="item">
@@ -107,14 +107,14 @@
             <div class="item">
                 <label>
                     Retirada no balcão
-                    <input required type="radio" name="deliver" id="delivert" value="balc">
+                    <input required type="radio" name="delivery" id="delivery" value="balc">
                 </label>
                 <label>
                     Delivery
-                    <input required type="radio" name="deliver" id="delivery" value="delivery">
+                    <input required type="radio" name="delivery" id="delivery" value="delivery">
                 </label>
             </div>
-            <button id="btn-confirm" class="btn-confirm">Finalizar pedido!</button>
+            <button id="btn-confirm" class="btn-confirm">Confirmar pedido!</button>
         </form>
     </main>
 </body>
