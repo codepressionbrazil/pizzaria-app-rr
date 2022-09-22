@@ -18,9 +18,52 @@
     </header>
     <main>
         <h1>Carrinho de pedidos</h1>
+        <p class="confira-seus-dados">Confira seus dados</p>
+        <div class="disabled-inputs">
+            <h4>Nome: </h4>
+            <input type="text" disabled class="client-name">
+        </div>
+        <div class="disabled-inputs">
+            <h4>Endereço: </h4>
+            <input type="text" disabled class="client-address">
+        </div>
+        <div class="disabled-inputs">
+            <h4>Telefone: </h4>
+            <input type="text" disabled class="client-phone">
+        </div>
+        <div class="disabled-inputs">
+            <h4>Tamanho Pizza: </h4>
+            <p class="order-pizza"> </p>
+        </div>
+        <div class="disabled-inputs">
+            <h4>Borda: </h4>
+            <p class="order-pizza-border"></p>
+        </div>
+        <div class="disabled-inputs">
+            <h4>Sabores: </h4>
+            <p class="order-flavors"></p>
+        </div>
+        
+        <div class="disabled-inputs">
+            <h4>Bebida: </h4>
+            <p class="order-drinks"></p>
+        </div>
+        <div class="disabled-inputs">
+            <h4>Tipo de entrega: </h4>
+            <p class="order-delivery"></p>
+        </div>
+        <br>
+        <br>
+        <div class="disabled-inputs">
+            <h4>Valor Total: </h4>
+            <p class="order-total-price"></p>
+        </div>
+        <br>
+        <button onclick="confirmOrder()">Confirmar Pedido</button>
     </main>
     <footer>
 
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
