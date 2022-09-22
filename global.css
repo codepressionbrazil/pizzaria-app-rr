@@ -26,6 +26,11 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    filter: brightness(1.5);
+    text-shadow: 1px 1px 1px black;
+}
+
 .logo{
     width: 100px;
 }
