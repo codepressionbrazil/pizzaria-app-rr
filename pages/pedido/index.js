@@ -149,7 +149,9 @@ function makeOrder() {
   const coca = getValueFromDucument("coca-cola", true);
 
   //arrumar isso aq
-  const delivery = getValueFromDucument("delivery") === "delivery"
+  const isDelivery = getValueFromDucument("delivery", true)
+
+  const delivery = isDelivery ? true : false
 
   const order = {
 	person,
@@ -167,7 +169,7 @@ function makeOrder() {
 	  guarana,
 	  coca,
 	},
-	delivery: delivery
+	delivery,
   };
   console.log(order)
   localStorage.setItem("order", JSON.stringify(order));
