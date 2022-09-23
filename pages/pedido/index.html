@@ -11,10 +11,13 @@
 </head>
 <body>
     <header>
-        <div class="links">
-            <a href="../../index.html">Home</a>
-            <a href="../confirma/index.html">Carrinho de pedidos</a>
-        </div>
+            <div class="logo">
+                <img src="../../imgs/logoRR.png" alt="Logo da Pizzaria">
+            </div>
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../confirma/index.html">Carrinho de pedidos</a>
+            </nav>
     </header>
 
     <main>
@@ -77,21 +80,19 @@
                 
             </label>
 
-            <h3>Adicionais</h3>
-            <div class="item">
-                <label>
-                    Borda
-                    <select id="border-flavor">
-                        <option value="no-border">Sem borda</option>
-                        <option value="catupiry">Catupiry</option>
-                        <option value="cheddar">Cheddar</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="white-cholate">Chocolate Branco</option>
-                    </select>
-                </label>
-            </div>
+            <h4>Adicionais</h4>
+            <label class="item">
+                Borda
+                <select id="border-flavor">
+                    <option value="no-border">Sem borda</option>
+                    <option value="catupiry">Catupiry</option>
+                    <option value="cheddar">Cheddar</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="white-cholate">Chocolate Branco</option>
+                </select>
+            </label>
 
-            <h2>Bebidas</h2>
+            <h4>Bebidas</h4>
             <div class="item">
                 <label>
                     Guaraná
@@ -103,18 +104,18 @@
                 </label>
             </div>
 
-            <h3>Tipo de entrega</h3>
-            <div class="item">
-                <label>
-                    Retirada no balcão
-                    <input required type="radio" name="delivery" id="balc" value="false">
-                </label>
-                <label>
-                    Delivery
-                    <input required type="radio" name="delivery" id="delivery" value="true">
-                </label>
-            </div>
-            <button id="btn-confirm" class="btn-confirm">Confirmar pedido!</button>
+            <h4>Tipo de entrega</h4>
+            <label class="item">
+                Retirada no balcão
+                <input required type="radio" name="delivery" id="balc" value="false">
+            </label>
+            <label class="item">
+                Delivery
+                <input required type="radio" name="delivery" id="delivery" value="true">
+            </label>
+
+
+            <button id="btn-confirm">Confirmar pedido!</button>
         </form>
     </main>
 </body>

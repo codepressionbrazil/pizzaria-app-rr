@@ -1,4 +1,5 @@
 main{
+    padding-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,4 +34,25 @@ input, select{
 
 input[type="radio"], input[type="checkbox"]{
     height: 15px;
+}
+
+input#balc, input#delivery{
+    width: 15px;
+}
+
+#btn-confirm{
+    margin-top: 1rem;
+    width: 230px;
+    height: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+#btn-confirm:hover{
+    background-color: #d2d2d2;
 }
