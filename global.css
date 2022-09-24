@@ -64,11 +64,26 @@ a{
     text-decoration: none;
 }
 
-a:hover{
-    filter: brightness(1.5);
-    text-shadow: 1px 1px 1px black;
-}
-
 .logo{
     width: 100px;
+}
+
+header a{
+    font-size: 1.15rem;
+}
+
+.link-btn{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button);
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.link-btn:hover{
+    filter: brightness(0.8);
+    color: #FFF;
 }
