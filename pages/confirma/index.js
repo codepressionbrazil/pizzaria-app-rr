@@ -1,43 +1,49 @@
 const order = JSON.parse(localStorage.getItem("order"));
 let totalPrice = 0;
 
-order["flavors"] = [
-    {name: "Saborzin1"}, {name: "Sabor2"}
-]
+const addIntoTotalPrice = (price) => {
+    totalPrice += price;
+}
 
 const getPizzaSize = (sizeChar) => {
     switch(sizeChar){
-        case "S": totalPrice += 20; return "Pequena (2 sabores)";
-        case "M": totalPrice += 30; return "Média (3 sabores)";
-        case "L": totalPrice += 40; return "Grande (4 sabores)";
-        case "F": totalPrice += 50; return "Família (5 sabores)";
+        case "S": addIntoTotalPrice(20); return "Pequena (2 sabores)";
+        case "M": addIntoTotalPrice(30); return "Média (3 sabores)";
+        case "L": addIntoTotalPrice(40); return "Grande (4 sabores)";
+        case "F": addIntoTotalPrice(50); return "Família (5 sabores)";
     }
 }
 
 const getOrderFlavors = (flavors) => {
     let flavorsString = "";
     for(let f of flavors){
-        flavorsString += f.name + ",\n";
+        flavorsString += f + ", ";
     }
-    return flavorsString;
+    
+    const formatedFlavors = flavorsString.split("");
+    formatedFlavors.pop();
+    formatedFlavors.pop();
+
+
+    return formatedFlavors.join("");
 }
 
 
 const getOrderDrinks = (drinks) => {
     let drinksString = "";
     if(drinks.guarana && drinks.coca){
-        totalPrice += 8;
+        addIntoTotalPrice(8);
         drinksString = "Guaraná e Coca-Cola"
     } else
     if(drinks.coca){
-        totalPrice += 4;
-        drinksString = "Coca-Cola 2L"
+        addIntoTotalPrice(4);
+        drinksString = "Coca-Cola Lata"
     } else 
     if(drinks.guarana){
-        totalPrice += 4;
-        drinksString = "Guaraná 2L"
+        addIntoTotalPrice(4);
+        drinksString = "Guaraná Lata"
     }
-    if(!(drinks.guarana && drinks.coca)){
+    if(!drinks.guarana && !drinks.coca){
         drinksString = "Sem bebida";
     }
 
@@ -74,7 +80,7 @@ if(order){
     const orderDelivery = document.querySelector(".order-delivery");
 
     nameInput.value = order.person;
-    addressInput.value =order.address.district + ", " + order.address.street + ", " + order.address.number;
+    addressInput.value = order.address.district + ", " + order.address.street + ", " + order.address.number;
     phoneInput.value = order.phone;
     pizzaSizeP.textContent = getPizzaSize(order.size);
     pizzaBorderP.textContent = getPizzaBorder(order.borderFlavor);
