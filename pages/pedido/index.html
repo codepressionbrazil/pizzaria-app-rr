@@ -22,91 +22,99 @@
 
     <main>
 
-        <h1>Faça seu pedido!</h1>
+        <h1 class="title-page">Faça seu pedido!</h1>
 
         <form id="order">
             <div class="personal-info">
                 <h2>Dados pessoais</h2>
-                <div class="item">
-                    <h4>Nome</h4>
-                    <input required type="text" id="name">
-                </div>
-
-                <div class="item">
-                    <h4>E-mail</h4>
-                    <input type="email" id="email">
-                </div>
-
-                <div class="item">
-                    <h4>Telefone</h4>
-                    <input required type="tel" id="phone">
+                <div class="inputs">
+                    <div class="item">
+                        <h4>Nome</h4>
+                        <input required type="text" id="name">
+                    </div>
+                    
+                    <div class="item">
+                        <h4>E-mail</h4>
+                        <input type="email" id="email">
+                    </div>
+                    
+                    <div class="item">
+                        <h4>Telefone</h4>
+                        <input required type="tel" id="phone">
+                    </div>
                 </div>
             </div>
 
             <div class="address">
                 <h2>Endereço</h2>
+                <div class="inputs">
 
-                <div class="item">
-                    <h4>CEP</h4>
-                    <input required type="text" id="street">
-                </div>
+                    <div class="item">
+                        <h4>Rua</h4>
+                        <input required type="text" id="street">
+                    </div>
+                    
+                    <div class="item">
+                        <h4>Bairro</h4>
+                        <input required type="text" id="district">
+                    </div>
+                    
+                    <div class="item">
+                        <h4>N°</h4>
+                        <input type="number" id="number">
+                    </div>
+                    
+                    <div class="item">
+                        <h4>Descrição</h4>
+                        <input required type="text" id="description">
+                    </div>
 
-                <div class="item">
-                    <h4>Bairro</h4>
-                    <input required type="text" id="district">
-                </div>
-
-                <div class="item">
-                    <h4>Bairro</h4>
-                    <input required type="text" id="district">
-                </div>
-
-                <div class="item">
-                    <h4>N°</h4>
-                    <input type="number" id="number">
-                </div>
-
-                <div class="item">
-                    <h4>Descrição</h4>
-                    <input required type="text" id="description">
                 </div>
             </div>
-
-
+            
+            
             <div class="pizza">
                 <h2>Pizza</h2>
 
-                <h4>Tamanho</h4>
-
-                <select required id="size">
-                    <option value="">Selecione um tamanho</option>
-                    <option value="S">Pequena - R$ 20</option>
-                    <option value="M">Média - R$ 30</option>
-                    <option value="L">Grande - R$ 40</option>
-                    <option value="F">Família - R$ 50</option>
-                </select>
-
-
-                <h3 style="display: none;" id="flavors-label-title">Sabores</h3>
-                <div id="flavors" class="item" />
+                <div>
+                    <div class="item">
+                        <h4>Tamanho</h4>
+                        
+                        <select required id="size">
+                            <option value="">Selecione um tamanho</option>
+                            <option value="S">Pequena - R$ 20</option>
+                            <option value="M">Média - R$ 30</option>
+                            <option value="L">Grande - R$ 40</option>
+                            <option value="F">Família - R$ 50</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <h4 style="display: none;margin-bottom: -2rem; margin-inline: auto;" id="flavors-label-title">Sabores</h4>
+                        <div class="flavors">
+                            <div id="flavors" class="item" />
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <h4>Borda</h4>
+                        <select id="border-flavor">
+                            <option value="no-border">Sem borda</option>
+                            <option value="catupiry">Catupiry</option>
+                            <option value="cheddar">Cheddar</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="white-cholate">Chocolate Branco</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <div class="extras">
                 <h2>Adicionais</h2>
 
-                <div class="item">
-                    <h4>Borda</h4>
-                    <select id="border-flavor">
-                        <option value="no-border">Sem borda</option>
-                        <option value="catupiry">Catupiry</option>
-                        <option value="cheddar">Cheddar</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="white-cholate">Chocolate Branco</option>
-                    </select>
-                </div>
+                <h4>Bebidas</h4>
 
                 <div class="item">
-                    <h4>Bebidas</h4>
 
                     <div class="drink">
                         <h4>Guaraná</h4>
@@ -122,6 +130,7 @@
             </div>
 
             <div class="delivery">
+                <h2>Tipo de entrega</h2>
                 <div class="item">
                     <h4>Retirada no balcão</h4>
                     <input required type="radio" name="delivery" id="balc" value="false">
