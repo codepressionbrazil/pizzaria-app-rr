@@ -25,47 +25,59 @@
         <h1>Faça seu pedido!</h1>
 
         <form id="order">
-            <h2>Dados pessoais</h2>
-            <label class="item">
-                Nome
-                <input required type="text" id="name">
-            </label>
+            <div class="personal-info">
+                <h2>Dados pessoais</h2>
+                <div class="item">
+                    <h4>Nome</h4>
+                    <input required type="text" id="name">
+                </div>
 
-            <label class="item">
-                E-mail
-                <input type="email" id="email">
-            </label>
+                <div class="item">
+                    <h4>E-mail</h4>
+                    <input type="email" id="email">
+                </div>
 
-            <label class="item">
-                Telefone
-                <input required type="number" id="phone" pattern="\(\d{2}\)\d{5}-\d{4}">
-            </label>
+                <div class="item">
+                    <h4>Telefone</h4>
+                    <input required type="tel" id="phone">
+                </div>
+            </div>
 
-            <h2>Endereço</h2>                
-            <label class="item">
-                Rua
-                <input required type="text" id="street">
-            </label>
+            <div class="address">
+                <h2>Endereço</h2>
 
-            <label class="item">
-                Bairro
-                <input required type="text" id="district">
-            </label>
+                <div class="item">
+                    <h4>CEP</h4>
+                    <input required type="text" id="street">
+                </div>
 
-            <label class="item">
-                N°
-                <input type="number" id="number">
-            </label>
+                <div class="item">
+                    <h4>Bairro</h4>
+                    <input required type="text" id="district">
+                </div>
 
-            <label class="item">
-                Descrição
-                <input required type="text" id="description">
-            </label>
+                <div class="item">
+                    <h4>Bairro</h4>
+                    <input required type="text" id="district">
+                </div>
+
+                <div class="item">
+                    <h4>N°</h4>
+                    <input type="number" id="number">
+                </div>
+
+                <div class="item">
+                    <h4>Descrição</h4>
+                    <input required type="text" id="description">
+                </div>
+            </div>
 
 
-            <h2>Pizza</h2>
-            <label class="item">
-                Tamanho:
+            <div class="pizza">
+                <h2>Pizza</h2>
+
+                <h4>Tamanho</h4>
+
                 <select required id="size">
                     <option value="">Selecione um tamanho</option>
                     <option value="S">Pequena - R$ 20</option>
@@ -73,47 +85,53 @@
                     <option value="L">Grande - R$ 40</option>
                     <option value="F">Família - R$ 50</option>
                 </select>
-            </label>
 
-            <h3 style="display: none;" id="flavors-label-title">Sabores</h3>
-            <label id="flavors" class="item">
-                
-            </label>
 
-            <h4>Adicionais</h4>
-            <label class="item">
-                Borda
-                <select id="border-flavor">
-                    <option value="no-border">Sem borda</option>
-                    <option value="catupiry">Catupiry</option>
-                    <option value="cheddar">Cheddar</option>
-                    <option value="chocolate">Chocolate</option>
-                    <option value="white-cholate">Chocolate Branco</option>
-                </select>
-            </label>
-
-            <h4>Bebidas</h4>
-            <div class="item">
-                <label>
-                    Guaraná
-                    <input type="checkbox" id="guarana">
-                </label>
-                <label>
-                    Coca-Cola
-                    <input type="checkbox" id="coca-cola">
-                </label>
+                <h3 style="display: none;" id="flavors-label-title">Sabores</h3>
+                <div id="flavors" class="item" />
             </div>
 
-            <h4>Tipo de entrega</h4>
-            <label class="item">
-                Retirada no balcão
-                <input required type="radio" name="delivery" id="balc" value="false">
-            </label>
-            <label class="item">
-                Delivery
-                <input required type="radio" name="delivery" id="delivery" value="true">
-            </label>
+            <div class="extras">
+                <h2>Adicionais</h2>
 
+                <div class="item">
+                    <h4>Borda</h4>
+                    <select id="border-flavor">
+                        <option value="no-border">Sem borda</option>
+                        <option value="catupiry">Catupiry</option>
+                        <option value="cheddar">Cheddar</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="white-cholate">Chocolate Branco</option>
+                    </select>
+                </div>
+
+                <div class="item">
+                    <h4>Bebidas</h4>
+
+                    <div class="drink">
+                        <h4>Guaraná</h4>
+                        <input type="checkbox" id="guarana">
+                    </div>
+
+                    <div class="drink">
+                        <h4>Coca-cola</h4>
+                        <input type="checkbox" id="coca-cola">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="delivery">
+                <div class="item">
+                    <h4>Retirada no balcão</h4>
+                    <input required type="radio" name="delivery" id="balc" value="false">
+                </div>
+
+                <div class="item">
+                    <h4>Delivery</h4>
+                    <input required type="radio" name="delivery" id="delivery" value="true">
+                </div>
+            </div>
 
             <button id="btn-confirm" class="link-btn">Confirmar pedido!</button>
         </form>
