@@ -4,6 +4,18 @@ function getValueFromDucument(id, isChecked = false) {
   return document.getElementById(id).value;
 }
 
+let pizzaSize;
+
+function setSizeValue(e){
+  if (!e.checked) return
+  pizzaSize = e.value
+  createFlavorsOptions()
+}
+
+function getSizeValue(){
+  return pizzaSize
+}
+
 const flavors = [
   {
     name: "Selecione",
@@ -65,9 +77,9 @@ const flavors = [
 
 document.getElementById("btn-confirm").addEventListener("click", makeOrder);
 
-document
-  .getElementById("size")
-  .addEventListener("change", createFlavorsOptions);
+// document
+//   .getElementById("size")
+//   .addEventListener("change", createFlavorsOptions);
 
 let numberOfFlavors;
 
@@ -80,8 +92,7 @@ function createFlavorsOptions() {
     if (!hasFlavors) break;
   }
 
-  const pizzaSize = getValueFromDucument("size");
-
+  const pizzaSize = getSizeValue();
 
   switch (pizzaSize) {
     case "S": {

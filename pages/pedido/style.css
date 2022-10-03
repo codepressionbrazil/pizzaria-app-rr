@@ -75,3 +75,37 @@ main{
 .drink{
     display: flex;
 }
+
+input[type="radio"]:checked{
+    color: red;
+}
+
+#S{
+    width: 60px;
+    height: 60px;
+}
+
+#M{
+    width: 75px;
+    height: 75px;
+}
+
+#L{
+    width: 90px;
+    height: 90px;
+}
+
+#F{
+    width: 105px;
+    height: 105px;
+}
+
+.size-inputs{
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.size-inputs input {
+    margin-inline: 10px;
+}
