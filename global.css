@@ -36,6 +36,7 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 header .logo{
@@ -89,4 +90,18 @@ a{
 
 .title-page{
     color: var(--button);
+}
+
+select{
+    border-radius: 5px;
+    outline: var(--black) solid 1px;
+    color: var(--black);
+}
+
+input[type="text"],input[type="number"], input[type="email"], input[type="password"], input[type="tel"]{
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: var(--black) solid 1px;
+    color: var(--black);
+    height: 25px;
 }

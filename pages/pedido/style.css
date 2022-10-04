@@ -18,6 +18,8 @@ main{
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 }
 
 .item h4{
@@ -76,10 +78,37 @@ main{
     display: flex;
 }
 
-input[type="radio"]:checked{
-    color: red;
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+input[type="radio"]{
+    accent-color: red;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--button);
+    border-color: #000;
+}
+
+input[type="radio"]:checked::after {
+    transform: scale(1);
+}
 #S{
     width: 60px;
     height: 60px;
@@ -103,9 +132,35 @@ input[type="radio"]:checked{
 .size-inputs{
     display: flex;
     align-items: center;
-    height: 100px;
 }
 
 .size-inputs input {
     margin-inline: 10px;
+}
+
+.flavor-inputs{
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flavor-inputs h4{
+    display: none;
+    margin-bottom: -1rem;
+    margin-inline: auto;
+}
+
+.border-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.border-container select{
+    width: 200px;
+    margin-inline: auto;
 }

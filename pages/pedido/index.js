@@ -77,10 +77,6 @@ const flavors = [
 
 document.getElementById("btn-confirm").addEventListener("click", makeOrder);
 
-// document
-//   .getElementById("size")
-//   .addEventListener("change", createFlavorsOptions);
-
 let numberOfFlavors;
 
 function createFlavorsOptions() {
@@ -169,21 +165,7 @@ function makeOrder() {
     const isDelivery = getValueFromDucument("delivery", true);
 
     const delivery = isDelivery ? true : false;
-
-    if (
-      !person ||
-      !email ||
-      !phone ||
-      !street ||
-      !district ||
-      !number ||
-      !size ||
-      !flavors ||
-      !borderFlavor
-    ) {
-      return;
-    }
-
+ 
     const order = {
       person,
       email,
