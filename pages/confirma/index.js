@@ -3,21 +3,23 @@ let totalPrice = 0;
 
 const addIntoTotalPrice = (price) => {
     totalPrice += price;
+
+    console.log(totalPrice);
 }
 
 const getPizzaSize = (sizeChar) => {
     switch(sizeChar){
-        case "S": addIntoTotalPrice(20); return "Pequena (2 sabores)";
-        case "M": addIntoTotalPrice(30); return "Média (3 sabores)";
-        case "L": addIntoTotalPrice(40); return "Grande (4 sabores)";
-        case "F": addIntoTotalPrice(50); return "Família (5 sabores)";
+        case "S": addIntoTotalPrice(40); return "Pequena (2 sabores)";
+        case "M": addIntoTotalPrice(50); return "Média (3 sabores)";
+        case "L": addIntoTotalPrice(60); return "Grande (4 sabores)";
+        case "F": addIntoTotalPrice(70); return "Família (5 sabores)";
     }
 }
 
 const getOrderFlavors = (flavors) => {
     let flavorsString = "";
     for(let f of flavors){
-        flavorsString += f + ", ";
+        flavorsString += (f + ", ");
     }
     
     const formatedFlavors = flavorsString.split("");
@@ -53,15 +55,16 @@ const getOrderDrinks = (drinks) => {
 const getPizzaBorder = (border) => {
     if(border.value == "no-border"){
         return border.name;
-    } else {
-        totalPrice += 3;
-        return border.name;
     }
+
+    addIntoTotalPrice(10);
+
+    return border[0].toUpperCase() + border.slice(1);
 };
 
 const getDeliveryType = (delivery) => {
     if(delivery){
-        totalPrice += 5;
+        addIntoTotalPrice(10);
         return "Entrega";
     }
     return "Retirada balcão";
@@ -72,22 +75,22 @@ if(order){
     const nameInput = document.querySelector(".client-name");
     const addressInput = document.querySelector(".client-address");
     const phoneInput = document.querySelector(".client-phone");
-    const pizzaSizeP = document.querySelector(".order-pizza");
-    const pizzaBorderP = document.querySelector(".order-pizza-border");
-    const orderFlavorsP = document.querySelector(".order-flavors");
-    const orderDrinksP = document.querySelector(".order-drinks");
-    const totalPriceP = document.querySelector(".order-total-price");
+    const pizzaSize = document.querySelector(".order-pizza");
+    const pizzaBorder = document.querySelector(".order-pizza-border");
+    const orderFlavors = document.querySelector(".order-flavors");
+    const orderDrinks = document.querySelector(".order-drinks");
+    const totalPriceLabel = document.querySelector(".order-total-price");
     const orderDelivery = document.querySelector(".order-delivery");
 
     nameInput.value = order.person;
     addressInput.value = order.address.district + ", " + order.address.street + ", " + order.address.number;
     phoneInput.value = order.phone;
-    pizzaSizeP.textContent = getPizzaSize(order.size);
-    pizzaBorderP.textContent = getPizzaBorder(order.borderFlavor);
-    orderFlavorsP.textContent = getOrderFlavors(order.flavors);
-    orderDrinksP.textContent = getOrderDrinks(order.drinks);
+    pizzaSize.textContent = getPizzaSize(order.size);
+    pizzaBorder.textContent = getPizzaBorder(order.borderFlavor);
+    orderFlavors.textContent = getOrderFlavors(order.flavors);
+    orderDrinks.textContent = getOrderDrinks(order.drinks);
     orderDelivery.textContent = getDeliveryType(order.delivery);
-    totalPriceP.textContent = "R$ "+totalPrice;
+    totalPriceLabel.textContent = "R$ " + totalPrice;
 } else {
     const feedbackTxt = document.querySelector(".confira-seus-dados");
     feedbackTxt.textContent = "Após fazer seu pedido, ele irá aparecer por aqui.";   
