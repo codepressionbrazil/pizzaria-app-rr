@@ -5,9 +5,10 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
-#order{
+#order-form{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -45,8 +46,8 @@ main{
     margin-left: auto;
 }
 
-.personal-info, .address, .pizza, .extras, .delivery{
-    width: 100%;
+.personal-into, .address, .pizza, .extras, .delivery{
+    width: fit-content;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -55,8 +56,18 @@ main{
     margin-top: 2rem;
 }
 
-.pizza{
-    text-align: center;
+.border-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drink{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .inputs{
@@ -65,17 +76,29 @@ main{
     justify-content: space-evenly;
 }
 
+.inputs .item{
+    margin-inline: 1rem;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
 .inputs select{
     max-height: 2rem;
     max-width: fit-content;
 }
 
-.extras .item{
-    width: 20%;
-}
-
 .drink{
     display: flex;
+}
+
+.delivery .item{
+    margin-inline: 1rem;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
 
 .input-container{

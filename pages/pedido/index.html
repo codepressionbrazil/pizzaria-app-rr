@@ -1,163 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RR | Pedido!</title>
-    <link rel="stylesheet" href="../../global.css">
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./index.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RR | Pedido!</title>
+	<link rel="stylesheet" href="../../global.css">
+	<link rel="stylesheet" href="./style.css">
+	<script defer src="./index.js"></script>
 </head>
+
 <body>
-    <header>
-            <div class="logo">
-                <img src="../../imgs/logoRR.png" alt="Logo da Pizzaria">
-            </div>
-            <nav>
-                <a href="../../index.html">Home</a>
-                <a href="../confirma/index.html">Carrinho de pedidos</a>
-            </nav>
-    </header>
+	<header>
+		<div class="logo">
+			<img src="../../imgs/logoRR.png" alt="Logo da Pizzaria">
+		</div>
+		<nav>
+			<a href="../../index.html">Home</a>
+			<a href="../confirma/index.html">Carrinho de pedidos</a>
+		</nav>
+	</header>
 
-    <main>
+	<main>
 
-        <h1 class="title-page">Faça seu pedido!</h1>
+		<h1 class="title-page">Faça seu pedido!</h1>
 
-        <form id="order">
-            <div class="personal-info">
-                <h2>Dados pessoais</h2>
-                <div class="inputs">
-                    <div class="item">
-                        <h4>Nome</h4>
-                        <input required type="text" id="name">
-                    </div>
-                    
-                    <div class="item">
-                        <h4>E-mail</h4>
-                        <input type="email" id="email">
-                    </div>
-                    
-                    <div class="item">
-                        <h4>Telefone</h4>
-                        <input required type="tel" id="phone">
-                    </div>
-                </div>
-            </div>
+		<form id="order-form">
+			<h2>Dados pessoais</h2>
+			<div class="personal-info">
+				<div class="inputs">
+					<div class="item">
+						<h4>Nome</h4>
+						<input required type="text" id="name">
+					</div>
 
-            <div class="address">
-                <h2>Endereço</h2>
-                <div class="inputs">
+					<div class="item">
+						<h4>E-mail</h4>
+						<input type="email" id="email">
+					</div>
 
-                    <div class="item">
-                        <h4>Rua</h4>
-                        <input required type="text" id="street">
-                    </div>
-                    
-                    <div class="item">
-                        <h4>Bairro</h4>
-                        <input required type="text" id="district">
-                    </div>
-                    
-                    <div class="item">
-                        <h4>N°</h4>
-                        <input type="number" id="number">
-                    </div>
-                    
-                    <div class="item">
-                        <h4>Descrição</h4>
-                        <input required type="text" id="description">
-                    </div>
+					<div class="item">
+						<h4>Telefone</h4>
+						<input required type="tel" id="phone">
+					</div>
+				</div>
+			</div>
 
-                </div>
-            </div>
-            
-            
-            <div class="pizza">
-                <h2>Pizza</h2>
+			<div class="address">
+				<h2>Endereço</h2>
+				<div class="inputs">
 
-                <div>
-                    <div class="item">
-                        <h4>Tamanho</h4>
-                        
-                        <div class="size-inputs">
+					<div class="item">
+						<h4>Rua</h4>
+						<input required type="text" id="street">
+					</div>
 
-                            <div class="input-container">
-                                <input type="radio" name="size" id="S" value="S" onclick="setSizeValue(this)" />
-                                <span>P</span>
-                            </div>
+					<div class="item">
+						<h4>Bairro</h4>
+						<input required type="text" id="district">
+					</div>
 
-                            <div class="input-container">
-                                <input type="radio" name="size" id="M" value="M" onclick="setSizeValue(this)" />
-                                <span>M</span>
-                            </div>
-                            <div class="input-container">
-                                <input type="radio" name="size" id="L" value="L" onclick="setSizeValue(this)" />
-                                <span>G</span>
-                            </div>
+					<div class="item">
+						<h4>N°</h4>
+						<input type="number" id="number">
+					</div>
 
-                            <div class="input-container">
-                                <input  type="radio" name="size" id="F" value="F" onclick="setSizeValue(this)" />
-                                <span>F</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flavor-inputs">
-                        <h4 id="flavors-label-title">Sabores</h4>
-                            <div id="flavors" class="item" />
-                        </div>
-                    </div>
-                    
-                    <div class="border-container">
-                        <h4>Borda</h4>
-                        <select id="border-flavor">
-                            <option value="no-border">Sem borda</option>
-                            <option value="catupiry">Catupiry</option>
-                            <option value="cheddar">Cheddar</option>
-                            <option value="chocolate">Chocolate</option>
-                            <option value="white-cholate">Chocolate Branco</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+					<div class="item">
+						<h4>Descrição</h4>
+						<input required type="text" id="description">
+					</div>
 
-            <div class="extras">
-                <h2>Adicionais</h2>
+				</div>
+			</div>
 
-                <h4>Bebidas</h4>
 
-                <div class="item">
+			<div class="pizza">
+				<h2>Pizza</h2>
 
-                    <div class="drink">
-                        <h4>Guaraná</h4>
-                        <input type="checkbox" id="guarana">
-                    </div>
+				<div>
+					<div class="item">
+						<h4>Tamanho</h4>
 
-                    <div class="drink">
-                        <h4>Coca-cola</h4>
-                        <input type="checkbox" id="coca-cola">
-                    </div>
-                </div>
+						<div class="size-inputs">
 
-            </div>
+							<div class="input-container">
+								<input type="radio" name="size" id="S" value="S" onclick="setSizeValue(this)" />
+								<span>P</span>
+							</div>
 
-            <div class="delivery">
-                <h2>Tipo de entrega</h2>
-                <div class="item">
-                    <h4>Retirada no balcão</h4>
-                    <input required type="radio" name="delivery" id="balc" value="false">
-                </div>
+							<div class="input-container">
+								<input type="radio" name="size" id="M" value="M" onclick="setSizeValue(this)" />
+								<span>M</span>
+							</div>
+							<div class="input-container">
+								<input type="radio" name="size" id="L" value="L" onclick="setSizeValue(this)" />
+								<span>G</span>
+							</div>
 
-                <div class="item">
-                    <h4>Delivery</h4>
-                    <input required type="radio" name="delivery" id="delivery" value="true">
-                </div>
-            </div>
+							<div class="input-container">
+								<input type="radio" name="size" id="F" value="F" onclick="setSizeValue(this)" />
+								<span>F</span>
+							</div>
+						</div>
+					</div>
 
-            <button id="btn-confirm" class="link-btn">Confirmar pedido!</button>
-        </form>
-    </main>
+					<div>
+						<div class="flavor-inputs">
+							<h4 id="flavors-label-title">Sabores</h4>
+							<div id="flavors" class="item" />
+						</div>
+					</div>
+
+					<div class="border-container">
+						<h4>Borda</h4>
+						<select id="border-flavor">
+							<option value="no-border">Sem borda</option>
+							<option value="catupiry">Catupiry</option>
+							<option value="cheddar">Cheddar</option>
+							<option value="chocolate">Chocolate</option>
+							<option value="white-cholate">Chocolate Branco</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="extras">
+				<h2>Adicionais</h2>
+
+				<h4>Bebidas</h4>
+
+				<div class="item">
+
+					<div class="drink">
+						<h4>Guaraná</h4>
+						<input type="checkbox" id="guarana">
+					</div>
+
+					<div class="drink">
+						<h4>Coca-cola</h4>
+						<input type="checkbox" id="coca-cola">
+					</div>
+				</div>
+
+			</div>
+
+			<div class="delivery">
+				<h2>Tipo de entrega</h2>
+				<div class="item">
+					<h4>Retirada no balcão</h4>
+					<input required type="radio" name="delivery" id="balc" value="false">
+				</div>
+
+				<div class="item">
+					<h4>Delivery</h4>
+					<input required type="radio" name="delivery" id="delivery" value="true">
+				</div>
+			</div>
+
+			<button type="submit" id="btn-confirm" class="link-btn">
+				Confirmar pedido!
+			</button>
+		</form>
+	</main>
 </body>
+
 </html>
