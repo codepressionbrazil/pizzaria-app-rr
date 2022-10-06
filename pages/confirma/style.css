@@ -6,13 +6,32 @@ main{
 }
 
 .disabled-inputs{
-    width: 22em;
+    width: 40%;
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
 }
 
 .disabled-inputs input{
     padding: 5px;
+    color: white;
+}
+
+.flavors{
+    width: 40%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.order-flavors{
+    width: 100%;
+    font-size: 14px;
+    margin-left: 2rem;
+    margin-right: 0;
+    display: inline;
 }

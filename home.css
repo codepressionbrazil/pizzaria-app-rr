@@ -5,4 +5,5 @@ main{
   justify-content: center;
   min-height: 100vh;
   padding-bottom: 4rem;
+  margin-top: 0;
 }

@@ -137,9 +137,6 @@ function createFlavorsOptions() {
 }
 
 function makeOrder(e) {
-  console.log("entrando");
-  e.preventDefault();
-  console.log("passei")
   try {
     const person = getValueFromDucument("name");
     const email = getValueFromDucument("email");
@@ -200,7 +197,6 @@ function makeOrder(e) {
   } catch (error) {
     localStorage.setItem("error", JSON.stringify({ error: error }));
 	}
-  
 }
 
 document.getElementById("order-form").addEventListener("submit", makeOrder);
