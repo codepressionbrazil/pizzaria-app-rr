@@ -6,13 +6,13 @@ function getValueFromDucument(id, isChecked = false) {
 
 let pizzaSize;
 
-function setSizeValue(e){
+function setSizeValue(e) {
   if (!e.checked) return
   pizzaSize = e.value
   createFlavorsOptions()
 }
 
-function getSizeValue(){
+function getSizeValue() {
   return pizzaSize
 }
 
@@ -86,9 +86,9 @@ function createFlavorsOptions() {
     }
     if (!hasFlavors) break;
   }
-  
+
   const pizzaSize = getSizeValue();
-  
+
   switch (pizzaSize) {
     case "S": {
       numberOfFlavors = 2;
@@ -111,21 +111,21 @@ function createFlavorsOptions() {
       return;
     }
   }
-  
+
   document.getElementById("flavors-label-title").style.display = "flex";
   for (let i = 0; numberOfFlavors > i; i++) {
     const flavorsLabel = document.getElementById("flavors");
     const flavorDiv = document.createElement("div");
-    
+
     flavorDiv.id = "pizzaFlavors";
-    
+
     const flavorSelectElement = document.createElement("select");
     flavorSelectElement.id = `flavor-${i + 1}`;
     flavors.forEach((flavor) => {
       const option = new Option(flavor.name, flavor.value);
       flavorSelectElement.add(option);
     });
-    
+
     const flavorTitle = document.createElement("h5");
     flavorTitle.innerText = `Sabor ${i + 1}`;
     flavorDiv.appendChild(flavorTitle);
@@ -136,17 +136,17 @@ function createFlavorsOptions() {
   }
 }
 
-function makeOrder(e) {
+async function makeOrder(e) {
   try {
     const person = getValueFromDucument("name");
     const email = getValueFromDucument("email");
     const phone = getValueFromDucument("phone");
-    
+
     const street = getValueFromDucument("street");
     const district = getValueFromDucument("district");
     const number = getValueFromDucument("number");
     const description = getValueFromDucument("description");
-    
+
     const size = document.getElementsByName("size");
     let sizeValue;
 
@@ -162,18 +162,18 @@ function makeOrder(e) {
       const flavor = select.options[select.selectedIndex].value;
       if (flavor) flavorsList.push(flavor);
     }
-    
+
     const formatedFlavors = flavorsList.map(flavor => flavors.find(f => f.value === flavor).name)
 
     const borderFlavor = getValueFromDucument("border-flavor");
-    
+
     const guarana = getValueFromDucument("guarana", true);
     const coca = getValueFromDucument("coca-cola", true);
-    
+
     const isDelivery = getValueFromDucument("delivery", true);
-    
+
     const delivery = isDelivery ? true : false;
-    
+
     const order = {
       person,
       email,
@@ -193,10 +193,19 @@ function makeOrder(e) {
       },
       delivery,
     };
-		localStorage.setItem("order", JSON.stringify(order));
+
+    await fetch("http://localhost:8080/pedido", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(order),
+    });
+
+    localStorage.setItem("order", JSON.stringify(order));
   } catch (error) {
     localStorage.setItem("error", JSON.stringify({ error: error }));
-	}
+  }
 }
 
 document.getElementById("order-form").addEventListener("submit", makeOrder);

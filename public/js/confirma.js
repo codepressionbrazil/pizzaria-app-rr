@@ -3,8 +3,6 @@ let totalPrice = 0;
 
 const addIntoTotalPrice = (price) => {
     totalPrice += price;
-
-    console.log(totalPrice);
 }
 
 const getPizzaSize = (sizeChar) => {
