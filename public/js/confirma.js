@@ -69,7 +69,6 @@ const getDeliveryType = (delivery) => {
 }
 
 if(order){
-    console.log(order);
     const nameInput = document.querySelector(".client-name");
     const addressInput = document.querySelector(".client-address");
     const phoneInput = document.querySelector(".client-phone");

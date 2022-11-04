@@ -138,6 +138,7 @@ function createFlavorsOptions() {
 
 async function makeOrder(e) {
   try {
+    console.log("makeOrder");
     const person = getValueFromDucument("name");
     const email = getValueFromDucument("email");
     const phone = getValueFromDucument("phone");
@@ -203,9 +204,10 @@ async function makeOrder(e) {
     });
 
     localStorage.setItem("order", JSON.stringify(order));
+    window.location.href = "http://localhost:8080/confirma";
   } catch (error) {
     localStorage.setItem("error", JSON.stringify({ error: error }));
   }
 }
 
-document.getElementById("order-form").addEventListener("submit", makeOrder);
+document.getElementById("btn-confirm").addEventListener("click", makeOrder);

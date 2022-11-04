@@ -46,20 +46,20 @@ app.get("/home", (req, res) => {
 })
 
 app.post("/pedido", (req, res) => {
-    person.address.description = req.body.address.description;
-    person.address.district = req.body.address.district;
-    person.address.number = req.body.address.number;
-    person.address.street = req.body.address.street;
-    person.borderFlavor = req.body.borderFlavor;
-    person.delivery = req.body.delivery;
-    person.drinks.coca = req.body.drinks.coca;
-    person.drinks.guarana = req.body.drinks.guarana;
-    person.email = req.body.email;
-    person.flavors = req.body.flavors;
-    person.person = req.body.person;
-    person.phone = req.body.phone;
-    person.size = req.body.size;
-    console.log("PERSON", person);
+
+    // person.address.description = req.body.address.description;
+    // person.address.district = req.body.address.district;
+    // person.address.number = req.body.address.number;
+    // person.address.street = req.body.address.street;
+    // person.borderFlavor = req.body.borderFlavor;
+    // person.delivery = req.body.delivery;
+    // person.drinks.coca = req.body.drinks.coca;
+    // person.drinks.guarana = req.body.drinks.guarana;
+    // person.email = req.body.email;
+    // person.flavors = req.body.flavors;
+    // person.person = req.body.person;
+    // person.phone = req.body.phone;
+    // person.size = req.body.size;
     res.redirect("/confirma");
 })
 
